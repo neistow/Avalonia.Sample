@@ -1,0 +1,26 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="Avalonia.Sample.Views.AddItemView">
+    <DockPanel>
+        <StackPanel
+            DockPanel.Dock="Bottom">
+            <Button 
+                HorizontalAlignment="Stretch" 
+                Command="{Binding Add}">
+                <TextBlock TextAlignment="Center" Text="Add"/>
+            </Button>
+            <Button 
+                HorizontalAlignment="Stretch"
+                Command="{Binding Cancel}">
+                <TextBlock TextAlignment="Center" Text="Cancel" />
+            </Button>
+        </StackPanel>
+
+        <TextBox AcceptsReturn="True"
+                 Text="{Binding Description}"
+                 Watermark="Type to add a new TODO" />
+    </DockPanel>
+</UserControl>
