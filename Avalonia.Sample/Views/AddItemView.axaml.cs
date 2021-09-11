@@ -1,18 +1,15 @@
-﻿using Avalonia;
-using Avalonia.Controls;
-using Avalonia.Markup.Xaml;
+﻿using Avalonia.Markup.Xaml;
+using Avalonia.ReactiveUI;
+using Avalonia.Sample.ViewModels;
+using ReactiveUI;
 
 namespace Avalonia.Sample.Views
 {
-    public class AddItemView : UserControl
+    public class AddItemView : ReactiveUserControl<AddItemViewModel>
     {
         public AddItemView()
         {
-            InitializeComponent();
-        }
-
-        private void InitializeComponent()
-        {
+            this.WhenActivated(_ => { });
             AvaloniaXamlLoader.Load(this);
         }
     }

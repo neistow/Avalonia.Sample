@@ -14,7 +14,7 @@
             </Button>
             <Button 
                 HorizontalAlignment="Stretch"
-                Command="{Binding Cancel}">
+                Command="{Binding GoBack}">
                 <TextBlock TextAlignment="Center" Text="Cancel" />
             </Button>
         </StackPanel>

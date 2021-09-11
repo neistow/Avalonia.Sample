@@ -1,8 +1,8 @@
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
-using Avalonia.Sample.Persistence;
-using Avalonia.Sample.ViewModels;
 using Avalonia.Sample.Views;
+using ReactiveUI;
+using Splat;
 
 namespace Avalonia.Sample
 {
@@ -15,11 +15,13 @@ namespace Avalonia.Sample
 
         public override void OnFrameworkInitializationCompleted()
         {
+            Bootstrapper.RegisterDependencies(Locator.CurrentMutable, Locator.Current);
+
             if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
             {
                 desktop.MainWindow = new MainWindow
                 {
-                    DataContext = new MainWindowViewModel(new TodoItemsRepository())
+                    DataContext = Locator.Current.GetService<IScreen>()
                 };
             }
 
